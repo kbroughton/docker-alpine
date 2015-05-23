@@ -4,7 +4,7 @@ MAINTAINER CognitiveScale.com
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
     LANG=C.UTF-8 
 
-RUN JAVA_VERSION=8 ; JAVA_UPDATE=45 ; JAVA_BUILD=14 JAVA_PACKAGE=server-jre && \
+RUN JAVA_VERSION=7 ; JAVA_UPDATE=80 ; JAVA_BUILD=15 JAVA_PACKAGE=server-jre && \
     apk add --update libgcc ca-certificates curl && \
     mkdir -p /usr/lib/jvm && \
     curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" \
@@ -15,7 +15,5 @@ RUN JAVA_VERSION=8 ; JAVA_UPDATE=45 ; JAVA_BUILD=14 JAVA_PACKAGE=server-jre && \
     ln -s /usr/lib/jvm/default-jvm/bin/java /usr/bin/java && \
     ln -s /usr/lib/jvm/default-jvm/bin/javac /usr/bin/javac && \
     rm -rf /usr/lib/jvm/default-jvm/*src.zip && \
-    apk del curl && \
-    apk del ca-certificates && \
-    apk del libgcc && \
+    apk del curl ca-certificates libgcc && \
     rm -rf /tmp/* /var/cache/apk/*
