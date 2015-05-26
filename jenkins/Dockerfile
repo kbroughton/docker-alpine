@@ -1,4 +1,4 @@
-FROM alpine-oracle-jre-7
+FROM c12e/alpine-oracle-jre-7
 MAINTAINER CognitiveScale.com
 
 ENV SERVICE_NAME=jenkins 
