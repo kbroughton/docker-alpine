@@ -7,6 +7,7 @@ ADD supervisor.conf /etc/supervisor.d/${SERVICE_NAME}.ini
 
 RUN apk add --update \
     git \
+    openssh-client \
     py-pip \
     wget \
     ca-certificates && \
