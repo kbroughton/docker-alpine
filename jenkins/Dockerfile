@@ -1,12 +1,11 @@
-FROM alpine-oracle-jre-7
+FROM alpine-oracle-jre-8
 MAINTAINER CognitiveScale.com
 
 ENV SERVICE_NAME=jenkins 
 
 ADD supervisor.conf /etc/supervisor.d/${SERVICE_NAME}.ini
 
-RUN JAVA_VERSION_MAJOR=8 ; JAVA_VERSION_MINOR=45 ; JAVA_VERSION_BUILD=14 ; JAVA_PACKAGE=server-jre && \
-  apk add --update \
+RUN apk add --update \
     py-pip \
     wget \
     ca-certificates && \
