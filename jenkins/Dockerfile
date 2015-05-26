@@ -6,6 +6,7 @@ ENV SERVICE_NAME=jenkins
 ADD supervisor.conf /etc/supervisor.d/${SERVICE_NAME}.ini
 
 RUN apk add --update \
+    git \
     py-pip \
     wget \
     ca-certificates && \
