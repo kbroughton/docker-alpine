@@ -1,0 +1,8 @@
+neo4j:
+    image: $registry/$service:$release
+    #command: console
+    ports:
+        - 7474
+    volumes:
+        - logs:/logs
+        - neo4j/data:/data
