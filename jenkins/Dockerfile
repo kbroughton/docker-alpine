@@ -1,7 +1,8 @@
 FROM c12e/alpine-oracle-jre-7
 MAINTAINER CognitiveScale.com
 
-ENV SERVICE_NAME=jenkins 
+ENV SERVICE_NAME=jenkins \
+    JENKINS_HOME=/data
 
 ADD supervisor.conf /etc/supervisor.d/${SERVICE_NAME}.ini
 
