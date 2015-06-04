@@ -3,6 +3,7 @@ MAINTAINER CognitiveScale.com
 
 ENV SERVICE_NAME=jenkins \
     JENKINS_HOME=/data
+    JAVA_OPTS="-Xms1024m -Xmx2048m -XX:PermSize=2048m -XX:MaxPermSize=4096m"
 
 ADD supervisor.conf /etc/supervisor.d/${SERVICE_NAME}.ini
 
